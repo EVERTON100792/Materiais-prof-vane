@@ -12,6 +12,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .cart-body {
+            /* Define uma altura máxima para a área dos itens. Usei 45vh (45% da altura da tela) para ser responsivo. */
+            max-height: 45vh; 
+            /* Adiciona uma barra de rolagem vertical apenas quando o conteúdo ultrapassar a altura máxima. */
+            overflow-y: auto;
+            /* Adiciona um pequeno espaço à direita para a barra de rolagem não cobrir o conteúdo. */
+            padding-right: 10px;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
