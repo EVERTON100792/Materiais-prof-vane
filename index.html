@@ -7,17 +7,13 @@
     <meta name="keywords" content="materiais pedagógicos, PDF, educação, ensino, atividades escolares">
     <title>Prof Vane PDFs - Materiais Pedagógicos Digitais de Qualidade</title>
     
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
@@ -26,7 +22,6 @@
                     <span>Prof Vane PDFs</span>
                 </div>
                 
-                <!-- Desktop Menu -->
                 <ul class="nav-menu">
                     <li class="nav-item">
                         <a href="#home" class="nav-link">Início</a>
@@ -48,7 +43,6 @@
                     </li>
                 </ul>
                 
-                <!-- Shopping Cart -->
                 <div class="cart-container">
                     <button class="cart-btn" id="cart-btn">
                         <i class="fas fa-shopping-cart"></i>
@@ -56,7 +50,6 @@
                     </button>
                 </div>
 
-                <!-- Mobile Menu Button -->
                 <div class="nav-toggle" id="mobile-menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -66,7 +59,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
@@ -100,7 +92,6 @@
             </div>
         </div>
         
-        <!-- Hero Background Elements -->
         <div class="hero-bg-elements">
             <div class="bg-element bg-element-1"></div>
             <div class="bg-element bg-element-2"></div>
@@ -108,7 +99,6 @@
         </div>
     </section>
 
-    <!-- Products Section -->
     <section id="produtos" class="products">
         <div class="container">
             <div class="section-header">
@@ -119,7 +109,6 @@
             </div>
             
             <div class="products-grid">
-                <!-- Product Card 1 -->
                 <div class="product-card" data-aos="fade-up">
                     <div class="product-image">
                         <i class="fas fa-book-open"></i>
@@ -158,7 +147,6 @@
                     </div>
                 </div>
 
-                <!-- Product Card 2 -->
                 <div class="product-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="product-image">
                         <i class="fas fa-calculator"></i>
@@ -197,7 +185,6 @@
                     </div>
                 </div>
 
-                <!-- Product Card 3 -->
                 <div class="product-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="product-image">
                         <i class="fas fa-globe-americas"></i>
@@ -235,7 +222,6 @@
                     </div>
                 </div>
 
-                <!-- Product Card 4 -->
                 <div class="product-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="product-image">
                         <i class="fas fa-language"></i>
@@ -273,7 +259,6 @@
                     </div>
                 </div>
 
-                <!-- Product Card 5 -->
                 <div class="product-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="product-image">
                         <i class="fas fa-flask"></i>
@@ -298,14 +283,19 @@
                             <span class="price-old">R$ 54,90</span>
                             <span class="price-current">R$ 32,90</span>
                         </div>
-                        <button class="btn btn-buy" data-hotmart-link="SEU_LINK_HOTMART_AQUI_5">
-                            <i class="fas fa-shopping-cart"></i>
-                            Comprar Agora
-                        </button>
+                        <div class="product-actions">
+                            <button class="btn btn-add-cart" onclick="addToCart(5, 'Ciências Experimentais', 32.90)">
+                                <i class="fas fa-cart-plus"></i>
+                                Adicionar ao Carrinho
+                            </button>
+                            <button class="btn btn-buy" data-hotmart-link="SEU_LINK_HOTMART_AQUI_5">
+                                <i class="fas fa-shopping-cart"></i>
+                                Comprar Agora
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Product Card 6 -->
                 <div class="product-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="product-image">
                         <i class="fas fa-clock"></i>
@@ -330,17 +320,22 @@
                             <span class="price-old">R$ 62,90</span>
                             <span class="price-current">R$ 36,90</span>
                         </div>
-                        <button class="btn btn-buy" data-hotmart-link="SEU_LINK_HOTMART_AQUI_6">
-                            <i class="fas fa-shopping-cart"></i>
-                            Comprar Agora
-                        </button>
+                        <div class="product-actions">
+                            <button class="btn btn-add-cart" onclick="addToCart(6, 'História Ilustrada', 36.90)">
+                                <i class="fas fa-cart-plus"></i>
+                                Adicionar ao Carrinho
+                            </button>
+                            <button class="btn btn-buy" data-hotmart-link="SEU_LINK_HOTMART_AQUI_6">
+                                <i class="fas fa-shopping-cart"></i>
+                                Comprar Agora
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="sobre" class="about">
         <div class="container">
             <div class="about-content">
@@ -402,7 +397,6 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
     <section id="depoimentos" class="testimonials">
         <div class="container">
             <div class="section-header">
@@ -467,7 +461,6 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
             <div class="section-header">
@@ -521,7 +514,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contato" class="contact">
         <div class="container">
             <div class="section-header">
@@ -574,7 +566,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -599,7 +590,6 @@
                     </div>
                 </div>
                 
-
                 
                 <div class="footer-section">
                     <h4>Suporte</h4>
@@ -611,7 +601,6 @@
                     </ul>
                 </div>
                 
-
             </div>
             
             <div class="footer-bottom">
@@ -620,7 +609,6 @@
         </div>
     </footer>
 
-    <!-- Shopping Cart Modal -->
     <div id="cart-modal" class="cart-modal">
         <div class="cart-modal-content">
             <div class="cart-header">
@@ -647,7 +635,6 @@
         </div>
     </div>
 
-    <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/5511999999999?text=Olá%20Prof%20Vane!%20Gostaria%20de%20saber%20mais%20sobre%20os%20materiais%20pedagógicos." 
        class="whatsapp-float" 
        target="_blank"
@@ -656,7 +643,6 @@
         <span class="whatsapp-text">Fale com Prof Vane</span>
     </a>
 
-    <!-- Loading Screen -->
     <div class="loading-screen" id="loading">
         <div class="loading-content">
             <div class="loading-spinner"></div>
@@ -664,12 +650,10 @@
         </div>
     </div>
 
-    <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
