@@ -130,7 +130,7 @@ p {
 }
 
 .header.scrolled .nav-link {
-    color: #333;
+    color: #2c3e50; /* <- Cor nova */
 }
 
 .header.scrolled .nav-logo {
@@ -212,7 +212,7 @@ p {
 .bar {
     width: 25px;
     height: 3px;
-    background: #333 !important;
+    background: #2c3e50 !important; /* <- Cor nova */
     transition: all 0.3s ease;
 }
 
