@@ -1573,7 +1573,7 @@ section {
 
 /*
 =====================================================
-** CORREÇÃO DEFINITIVA PARA A COR DOS TÍTULOS **
+** NOVOS TÍTULOS VIBRANTES (VINHO ROSADO) **
 =====================================================
 */
 .section-title,
@@ -1583,5 +1583,5 @@ section {
 .cart-item-name,
 .cart-total,
 .about-content .section-title {
-    color: #2c3e50; /* Nova cor definitiva para os títulos */
+    color: #c44569;
 }
