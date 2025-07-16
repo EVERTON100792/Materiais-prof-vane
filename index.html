@@ -14,13 +14,29 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
+        /* Correção do carrinho para adicionar barra de rolagem */
         .cart-body {
-            /* Define uma altura máxima para a área dos itens. Usei 45vh (45% da altura da tela) para ser responsivo. */
             max-height: 45vh; 
-            /* Adiciona uma barra de rolagem vertical apenas quando o conteúdo ultrapassar a altura máxima. */
             overflow-y: auto;
-            /* Adiciona um pequeno espaço à direita para a barra de rolagem não cobrir o conteúdo. */
             padding-right: 10px;
+        }
+
+        /* Ajuste na seção "Sobre" após remover as estatísticas */
+        .about-content {
+            /* Força o layout a ter apenas uma coluna centralizada */
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+
+        .about-text {
+             /* Centraliza o conteúdo de texto que restou */
+            text-align: center;
+        }
+
+        .features-list {
+            /* Garante que a lista de diferenciais permaneça alinhada à esquerda dentro do bloco centralizado */
+            text-align: left;
+            display: inline-grid;
         }
     </style>
 </head>
@@ -45,9 +61,6 @@
                     </li>
                     <li class="nav-item">
                         <a href="#contato" class="nav-link">Contato</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#depoimentos" class="nav-link">Depoimentos</a>
                     </li>
                     <li class="nav-item">
                         <a href="#faq" class="nav-link">FAQ</a>
@@ -386,85 +399,6 @@
                                 <h4>Suporte Dedicado</h4>
                                 <p>Atendimento personalizado via WhatsApp</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-stats" data-aos="fade-left">
-                    <div class="stat-item">
-                        <div class="stat-number">5000+</div>
-                        <div class="stat-label">Educadores Satisfeitos</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Materiais Disponíveis</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">Satisfação dos Clientes</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="depoimentos" class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">O que dizem nossos clientes</h2>
-                <p class="section-subtitle">
-                    Depoimentos de educadores que transformaram suas aulas
-                </p>
-            </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card" data-aos="fade-up">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Os materiais da Prof Vane revolucionaram minhas aulas! Meus alunos estão muito mais engajados e o aprendizado ficou mais divertido."</p>
-                        <div class="testimonial-author">
-                            <h4>Maria Silva</h4>
-                            <span>Professora de Alfabetização</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Qualidade excepcional! Os PDFs são bem estruturados e economizei muito tempo na preparação das aulas."</p>
-                        <div class="testimonial-author">
-                            <h4>João Santos</h4>
-                            <span>Professor de Matemática</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Recomendo para todos os colegas! Material de altíssima qualidade e suporte incrível da Prof Vane."</p>
-                        <div class="testimonial-author">
-                            <h4>Ana Costa</h4>
-                            <span>Coordenadora Pedagógica</span>
                         </div>
                     </div>
                 </div>
