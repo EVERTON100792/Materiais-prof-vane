@@ -1585,3 +1585,22 @@ section {
 .about-content .section-title {
     color: #c44569;
 }
+
+/* Adicione ou substitua este código no seu arquivo styles.css */
+
+.product-image {
+    height: 280px; /* Define uma altura fixa para a área da imagem. Você pode ajustar este valor! */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* Cor de fundo caso a imagem não carregue */
+    overflow: hidden; /* Esconde as partes da imagem que sobrarem */
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ESSA É A PROPRIEDADE MAIS IMPORTANTE! */
+                       /* Ela faz a imagem cobrir todo o espaço, sem distorcer. */
+}
