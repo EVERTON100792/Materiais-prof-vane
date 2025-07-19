@@ -1604,3 +1604,29 @@ section {
     object-fit: cover; /* ESSA É A PROPRIEDADE MAIS IMPORTANTE! */
                        /* Ela faz a imagem cobrir todo o espaço, sem distorcer. */
 }
+
+/*
+=====================================================
+** ESTILO PARA O CRÉDITO DO DESENVOLVEDOR NO RODAPÉ **
+=====================================================
+*/
+
+.developer-credit {
+  margin-top: 12px;            /* Adiciona um espaço para separar do texto de copyright */
+  font-size: 0.9em;              /* Deixa a fonte um pouco menor para ser sutil */
+  color: #bdc3c7;               /* Usa a mesma cor cinza clara do texto do rodapé */
+  opacity: 0.9;                  /* Uma leve transparência para um toque mais refinado */
+  text-align: center;          /* <<< ADICIONE/MODIFIQUE ESTA LINHA PARA CENTRALIZAR */
+}
+
+.developer-credit a {
+  color: #ffffff;                /* Cor branca para o link, dando destaque no fundo escuro */
+  font-weight: 500;              /* Deixa o texto do link um pouco mais forte */
+  text-decoration: none;         /* Remove o sublinhado padrão do link */
+  transition: color 0.3s ease;   /* Adiciona uma transição suave na mudança de cor */
+}
+
+.developer-credit a:hover {
+  color: #ff6b9d;                /* Ao passar o mouse, o link fica com a cor rosa principal do site */
+  text-decoration: underline;    /* Adiciona um sublinhado no hover para clareza */
+}
