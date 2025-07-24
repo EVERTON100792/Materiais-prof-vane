@@ -1715,3 +1715,108 @@ section {
         padding: 2rem;
     }
 }
+/*
+=====================================================
+** ESTILOS DO FORMULÁRIO DE CONTATO (MODO CLARO E ESCURO) **
+=====================================================
+*/
+
+/* Layout do grid da seção de contato */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+/* === ESTILO PADRÃO (MODO CLARO) === */
+/* O formulário se parecerá com um card branco */
+.contact-form-container {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-container .form-title {
+    text-align: center;
+    color: #c44569;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+    width: 100%;
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    background-color: #fdfdfd;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.contact-form-container input::placeholder,
+.contact-form-container textarea::placeholder {
+    color: #aaa;
+}
+
+.contact-form-container input:focus,
+.contact-form-container textarea:focus {
+    outline: none;
+    border-color: #ff6b9d;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.2);
+}
+
+/* === AJUSTES PARA O MODO ESCURO === */
+/* Aqui o formulário ficará escuro, igual aos outros cards */
+@media (prefers-color-scheme: dark) {
+    .contact-form-container {
+        background: #333; /* Fundo escuro, igual ao .contact-item */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-form-container .form-title {
+        color: #ffffff; /* Título branco para contraste */
+    }
+
+    .contact-form-container input,
+    .contact-form-container textarea {
+        background-color: #444; /* Fundo do campo um pouco mais claro */
+        color: #ffffff;         /* Texto branco */
+        border-color: #555;     /* Borda sutil */
+    }
+
+    .contact-form-container input::placeholder,
+    .contact-form-container textarea::placeholder {
+        color: #bbb;
+    }
+    
+    .contact-form-container input:focus,
+    .contact-form-container textarea:focus {
+        background-color: #505050;
+        border-color: #ff6b9d; /* O destaque rosa é mantido */
+    }
+}
+
+
+/* === AJUSTES PARA TELAS MENORES === */
+@media screen and (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-form-container {
+        padding: 2rem;
+    }
+}
