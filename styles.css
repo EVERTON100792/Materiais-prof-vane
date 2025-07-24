@@ -1633,7 +1633,7 @@ section {
 
 /*
 =====================================================
-** ESTILOS DO FORMULÁRIO DE CONTATO **
+** ESTILOS DO FORMULÁRIO DE CONTATO (COM FUNDO ESCURO) **
 =====================================================
 */
 
@@ -1647,15 +1647,15 @@ section {
 
 /* Container do formulário */
 .contact-form-container {
-    background: #ffffff;
+    background: #2c3e50; /* << FUNDO ALTERADO para o azul-escuro do rodapé */
     padding: 2.5rem;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 45px rgba(44, 62, 80, 0.3); /* Sombra ajustada para o fundo escuro */
 }
 
 .contact-form-container .form-title {
     text-align: center;
-    color: #c44569; /* Cor principal de títulos */
+    color: #ffffff; /* << COR DO TÍTULO ALTERADA para branco */
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
 }
@@ -1670,28 +1670,33 @@ section {
 .contact-form-container textarea {
     width: 100%;
     padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
-    color: #333;
     transition: all 0.3s ease;
+    
+    /* Estilo dos campos para o fundo escuro */
+    background-color: #34495e; /* << FUNDO DO CAMPO alterado para um tom mais claro de azul */
+    color: #ffffff;             /* << COR DO TEXTO alterada para branco */
+    border: 1px solid #5E6E80;  /* << COR DA BORDA alterada */
+    border-radius: 10px;
 }
 
+/* Cor do texto de placeholder */
 .contact-form-container input::placeholder,
 .contact-form-container textarea::placeholder {
-    color: #aaa;
+    color: #bdc3c7; /* << COR DO PLACEHOLDER alterada para um cinza claro */
 }
 
-/* Efeito de foco nos campos */
+/* Efeito de foco nos campos (mantém o destaque rosa) */
 .contact-form-container input:focus,
 .contact-form-container textarea:focus {
     outline: none;
     border-color: #ff6b9d;
+    background-color: #4a637c; /* Escurece um pouco o fundo ao focar */
     box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.2);
 }
 
-/* Estilo específico para o botão de envio */
+/* Estilo específico para o botão de envio (não precisa de alteração) */
 .btn-form-submit {
     width: 100%;
     justify-content: center;
