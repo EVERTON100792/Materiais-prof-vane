@@ -549,6 +549,11 @@ section {
     color: #666;
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    /* ADICIONE ESTAS 4 LINHAS PARA LIMITAR O TEXTO */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4; /* <<< Máximo de 4 linhas. Você pode mudar para 3 ou 5 se preferir! */
+    overflow: hidden;
 }
 
 .product-features {
