@@ -15,7 +15,8 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    color: #2c3e50; /* <- Cor nova para títulos */
+    color: #2c3e50;
+    /* <- Cor nova para títulos */
     overflow-x: hidden;
     width: 100%;
     min-height: 100vh;
@@ -31,7 +32,12 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 600;
     line-height: 1.3;
     margin-bottom: 1rem;
@@ -39,8 +45,10 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     margin-bottom: 1rem;
-    color: #5E6E80; /* <- Cor nova para textos */
+    color: #5E6E80;
+    /* <- Cor nova para textos */
 }
+
 /* Buttons */
 .btn {
     display: inline-flex;
@@ -65,7 +73,7 @@ p {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s;
 }
 
@@ -113,6 +121,25 @@ p {
     box-shadow: 0 8px 30px rgba(248, 181, 0, 0.6);
 }
 
+.btn-download {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    width: 100%;
+    justify-content: center;
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+    text-decoration: none;
+    /* Garante que não terá sublinhado */
+}
+
+.btn-download:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(40, 167, 69, 0.6);
+    color: white;
+    /* Mantém a cor do texto branca no hover */
+}
+
 /* Header */
 .header {
     position: fixed;
@@ -130,7 +157,8 @@ p {
 }
 
 .header.scrolled .nav-link {
-    color: #2c3e50; /* <- Cor nova */
+    color: #2c3e50;
+    /* <- Cor nova */
 }
 
 .header.scrolled .nav-logo {
@@ -212,7 +240,8 @@ p {
 .bar {
     width: 25px;
     height: 3px;
-    background: #2c3e50 !important; /* <- Cor nova */
+    background: #2c3e50 !important;
+    /* <- Cor nova */
     transition: all 0.3s ease;
 }
 
@@ -251,7 +280,7 @@ p {
 
 .highlight {
     color: #f8b500;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-description {
@@ -303,26 +332,47 @@ p {
 .hero-books i:nth-child(1) {
     animation-delay: 0s;
 }
+
 .hero-books i:nth-child(2) {
     animation-delay: 0.3s;
 }
+
 .hero-books i:nth-child(3) {
     animation-delay: 0.6s;
 }
 
 @keyframes bookRotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes iconBounce {
-    0%, 100% { transform: scale(1) translateY(0); }
-    50% { transform: scale(1.1) translateY(-10px); }
+
+    0%,
+    100% {
+        transform: scale(1) translateY(0);
+    }
+
+    50% {
+        transform: scale(1.1) translateY(-10px);
+    }
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 .hero-bg-elements {
@@ -407,6 +457,10 @@ section {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     position: relative;
+    /* --- CORREÇÕES UNIFICADAS AQUI --- */
+    display: flex;
+    flex-direction: column;
+    animation: cardFloat 6s ease-in-out infinite;
 }
 
 .product-card:hover {
@@ -415,16 +469,22 @@ section {
 }
 
 .product-image {
-    height: 200px;
-    background: linear-gradient(135deg, #ff6b9d 0%, #c44569 50%, #f8b500 100%);
+    height: 280px;
+    width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 4rem;
-    color: white;
-    position: relative;
+    justify-content: center;
+    background-color: #f0f0f0;
     overflow: hidden;
+    position: relative;
 }
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 .product-image::before {
     content: '';
@@ -433,7 +493,7 @@ section {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     transition: left 0.6s;
 }
 
@@ -455,8 +515,15 @@ section {
 }
 
 @keyframes badgePulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 .product-badge.popular {
@@ -465,6 +532,10 @@ section {
 
 .product-content {
     padding: 2rem;
+    /* --- CORREÇÕES PARA ALINHAMENTO --- */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .product-title {
@@ -514,6 +585,14 @@ section {
     font-size: 1.5rem;
     font-weight: 700;
 }
+
+.product-actions {
+    display: flex;
+    gap: 0.5rem;
+    /* --- CORREÇÕES PARA ALINHAMENTO --- */
+    margin-top: auto;
+}
+
 
 /* About Section */
 .about-content {
@@ -585,6 +664,13 @@ section {
     background: #f8f9fa;
 }
 
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
 .contact-content {
     max-width: 800px;
     margin: 0 auto;
@@ -646,6 +732,59 @@ section {
 
 .contact-link:hover {
     color: #c44569;
+}
+
+.contact-form-container {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-container .form-title {
+    text-align: center;
+    color: #c44569;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+    width: 100%;
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    background-color: #fdfdfd;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.contact-form-container input::placeholder,
+.contact-form-container textarea::placeholder {
+    color: #aaa;
+}
+
+.contact-form-container input:focus,
+.contact-form-container textarea:focus {
+    outline: none;
+    border-color: #ff6b9d;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.2);
+}
+
+.btn-form-submit {
+    width: 100%;
+    justify-content: center;
+    font-size: 1.1rem;
+    padding: 15px;
 }
 
 /* Footer */
@@ -742,6 +881,26 @@ section {
     color: #bdc3c7;
 }
 
+.developer-credit {
+    margin-top: 12px;
+    font-size: 0.9em;
+    color: #bdc3c7;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.developer-credit a {
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.developer-credit a:hover {
+    color: #ff6b9d;
+    text-decoration: underline;
+}
+
 /* WhatsApp Float */
 .whatsapp-float {
     position: fixed;
@@ -776,9 +935,17 @@ section {
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* Back to Top */
@@ -842,8 +1009,13 @@ section {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* AOS Animation */
@@ -881,10 +1053,6 @@ section {
 }
 
 /* Extra Animations */
-.product-card {
-    animation: cardFloat 6s ease-in-out infinite;
-}
-
 .product-card:nth-child(even) {
     animation-delay: 3s;
 }
@@ -894,8 +1062,15 @@ section {
 }
 
 @keyframes cardFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
 }
 
 .nav-logo img {
@@ -903,8 +1078,13 @@ section {
 }
 
 @keyframes logoSpin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .whatsapp-float {
@@ -912,9 +1092,19 @@ section {
 }
 
 @keyframes whatsappBounce {
-    0%, 100% { transform: scale(1) translateY(0); }
-    25% { transform: scale(1.1) translateY(-5px); }
-    75% { transform: scale(1.05) translateY(-2px); }
+
+    0%,
+    100% {
+        transform: scale(1) translateY(0);
+    }
+
+    25% {
+        transform: scale(1.1) translateY(-5px);
+    }
+
+    75% {
+        transform: scale(1.05) translateY(-2px);
+    }
 }
 
 /* Hero title animation */
@@ -923,8 +1113,15 @@ section {
 }
 
 @keyframes titleGlow {
-    0%, 100% { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-    50% { text-shadow: 2px 2px 20px rgba(248, 181, 0, 0.5), 2px 2px 4px rgba(0,0,0,0.3); }
+
+    0%,
+    100% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    50% {
+        text-shadow: 2px 2px 20px rgba(248, 181, 0, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
 }
 
 /* Button animations */
@@ -936,9 +1133,20 @@ section {
 }
 
 @keyframes sparkle {
-    0% { opacity: 0; transform: scale(0); }
-    50% { opacity: 1; transform: scale(1.2); }
-    100% { opacity: 0; transform: scale(0); }
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
 }
 
 /* Stats animation */
@@ -947,59 +1155,22 @@ section {
 }
 
 @keyframes countUp {
-    0% { transform: scale(0); opacity: 0; }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); opacity: 1; }
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
-/* Cart Styles */
-.cart-container {
-    position: relative;
-    margin-right: 1rem;
-}
-
-.cart-btn {
-    background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.2rem;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1rem;
-    position: relative;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
-}
-
-.cart-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
-}
-
-.cart-count {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background: #f8b500;
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    font-weight: bold;
-    animation: bounce 0.5s ease;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
-}
-
-/* Cart Modal */
+/* Cart Styles & Modal */
 .cart-modal {
     display: none;
     position: fixed;
@@ -1073,156 +1244,6 @@ section {
     color: #ddd;
 }
 
-.cart-item {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    border-bottom: 1px solid #eee;
-    transition: all 0.3s ease;
-}
-
-.cart-item:hover {
-    background: #f8f9fa;
-}
-
-.cart-item-info {
-    flex: 1;
-    margin-left: 1rem;
-}
-
-.cart-item-name {
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 0.5rem;
-}
-
-.cart-item-price {
-    color: #ff6b9d;
-    font-weight: 500;
-}
-
-.cart-item-remove {
-    background: #ff4757;
-    color: white;
-    border: none;
-    padding: 0.5rem;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.cart-item-remove:hover {
-    background: #ff3838;
-    transform: scale(1.1);
-}
-
-.cart-footer {
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-top: 1px solid #eee;
-}
-
-.cart-total {
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-.btn-checkout {
-    width: 100%;
-    background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
-    color: white;
-    border: none;
-    padding: 1rem;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-checkout:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
-}
-
-/* Product Actions */
-.product-actions {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
-}
-
-.btn-add-cart {
-    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.2rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    flex: 1;
-}
-
-.btn-add-cart:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
-}
-
-/* Testimonials Section */
-.testimonials {
-    padding: 5rem 0;
-    background: #f8f9fa;
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.testimonial-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    text-align: center;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px);
-}
-
-.stars {
-    margin-bottom: 1rem;
-}
-
-.stars i {
-    color: #f8b500;
-    font-size: 1.2rem;
-    margin: 0 0.1rem;
-}
-
-.testimonial-content p {
-    font-style: italic;
-    color: #666;
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-}
-
-.testimonial-author h4 {
-    color: #333;
-    margin-bottom: 0.5rem;
-}
-
-.testimonial-author span {
-    color: #ff6b9d;
-    font-weight: 500;
-}
-
 /* FAQ Section */
 .faq {
     padding: 5rem 0;
@@ -1294,32 +1315,29 @@ section {
 
 /* Mobile Responsive */
 @media screen and (max-width: 768px) {
-    * {
-        box-sizing: border-box;
-    }
-    
     body {
         overflow-x: hidden;
         width: 100%;
     }
-    
+
     .container {
         padding: 0 15px;
     }
-    
+
     .contact-info {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .contact-item {
         padding: 1.5rem;
     }
-    
+
     .contact-link {
         font-size: 0.8rem;
         word-break: break-all;
     }
+
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -1419,10 +1437,6 @@ section {
         font-size: 2rem;
     }
 
-    .contact-info {
-        grid-template-columns: 1fr;
-    }
-
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1431,22 +1445,18 @@ section {
     .footer-section:nth-child(2) {
         display: none;
     }
-    
-    .cart-container {
-        margin-right: 0.5rem;
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
-    
-    .cart-btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
+
+    .contact-form-container {
+        padding: 2rem;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .container {
-        padding: 0 15px;
-    }
-
     .hero-title {
         font-size: 2rem;
     }
@@ -1479,7 +1489,8 @@ section {
 }
 
 /* High DPI Displays */
-@media screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media screen and (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
     .hero-graphic {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -1518,10 +1529,38 @@ section {
         background: #333;
         color: #fff;
     }
+
+    .contact-form-container {
+        background: #333;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-form-container .form-title {
+        color: #ffffff;
+    }
+
+    .contact-form-container input,
+    .contact-form-container textarea {
+        background-color: #444;
+        color: #ffffff;
+        border-color: #555;
+    }
+
+    .contact-form-container input::placeholder,
+    .contact-form-container textarea::placeholder {
+        color: #bbb;
+    }
+
+    .contact-form-container input:focus,
+    .contact-form-container textarea:focus {
+        background-color: #505050;
+        border-color: #ff6b9d;
+    }
 }
 
 /* Print Styles */
 @media print {
+
     .header,
     .whatsapp-float,
     .back-to-top,
@@ -1542,6 +1581,7 @@ section {
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -1584,286 +1624,4 @@ section {
 .cart-total,
 .about-content .section-title {
     color: #c44569;
-}
-
-/* Adicione ou substitua este código no seu arquivo styles.css */
-
-.product-image {
-    height: 280px; /* Define uma altura fixa para a área da imagem. Você pode ajustar este valor! */
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f0f0f0; /* Cor de fundo caso a imagem não carregue */
-    overflow: hidden; /* Esconde as partes da imagem que sobrarem */
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* ESSA É A PROPRIEDADE MAIS IMPORTANTE! */
-                       /* Ela faz a imagem cobrir todo o espaço, sem distorcer. */
-}
-
-/*
-=====================================================
-** ESTILO PARA O CRÉDITO DO DESENVOLVEDOR NO RODAPÉ **
-=====================================================
-*/
-
-.developer-credit {
-  margin-top: 12px;            /* Adiciona um espaço para separar do texto de copyright */
-  font-size: 0.9em;              /* Deixa a fonte um pouco menor para ser sutil */
-  color: #bdc3c7;               /* Usa a mesma cor cinza clara do texto do rodapé */
-  opacity: 0.9;                  /* Uma leve transparência para um toque mais refinado */
-  text-align: center;          /* <<< ADICIONE/MODIFIQUE ESTA LINHA PARA CENTRALIZAR */
-}
-
-.developer-credit a {
-  color: #ffffff;                /* Cor branca para o link, dando destaque no fundo escuro */
-  font-weight: 500;              /* Deixa o texto do link um pouco mais forte */
-  text-decoration: none;         /* Remove o sublinhado padrão do link */
-  transition: color 0.3s ease;   /* Adiciona uma transição suave na mudança de cor */
-}
-
-.developer-credit a:hover {
-  color: #ff6b9d;                /* Ao passar o mouse, o link fica com a cor rosa principal do site */
-  text-decoration: underline;    /* Adiciona um sublinhado no hover para clareza */
-}
-
-/*
-=====================================================
-** ESTILOS DO FORMULÁRIO DE CONTATO (COM FUNDO ESCURO) **
-=====================================================
-*/
-
-/* Cria um layout de grid para alinhar informações e formulário */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr; /* Coluna do formulário um pouco maior */
-    gap: 2.5rem;
-    align-items: flex-start;
-}
-
-/* Container do formulário */
-.contact-form-container {
-    background: #2c3e50; /* << FUNDO ALTERADO para o azul-escuro do rodapé */
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 15px 45px rgba(44, 62, 80, 0.3); /* Sombra ajustada para o fundo escuro */
-}
-
-.contact-form-container .form-title {
-    text-align: center;
-    color: #ffffff; /* << COR DO TÍTULO ALTERADA para branco */
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-}
-
-/* Espaçamento entre os campos do formulário */
-.form-group {
-    margin-bottom: 1.2rem;
-}
-
-/* Estilo geral para os campos de input e textarea */
-.contact-form-container input,
-.contact-form-container textarea {
-    width: 100%;
-    padding: 15px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    
-    /* Estilo dos campos para o fundo escuro */
-    background-color: #34495e; /* << FUNDO DO CAMPO alterado para um tom mais claro de azul */
-    color: #ffffff;             /* << COR DO TEXTO alterada para branco */
-    border: 1px solid #5E6E80;  /* << COR DA BORDA alterada */
-    border-radius: 10px;
-}
-
-/* Cor do texto de placeholder */
-.contact-form-container input::placeholder,
-.contact-form-container textarea::placeholder {
-    color: #bdc3c7; /* << COR DO PLACEHOLDER alterada para um cinza claro */
-}
-
-/* Efeito de foco nos campos (mantém o destaque rosa) */
-.contact-form-container input:focus,
-.contact-form-container textarea:focus {
-    outline: none;
-    border-color: #ff6b9d;
-    background-color: #4a637c; /* Escurece um pouco o fundo ao focar */
-    box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.2);
-}
-
-/* Estilo específico para o botão de envio (não precisa de alteração) */
-.btn-form-submit {
-    width: 100%;
-    justify-content: center;
-    font-size: 1.1rem;
-    padding: 15px;
-}
-
-/* Ajustes para telas menores (celulares) */
-@media screen and (max-width: 992px) {
-    .contact-grid {
-        grid-template-columns: 1fr; /* Transforma em uma única coluna */
-        gap: 2rem;
-    }
-
-    .contact-form-container {
-        padding: 2rem;
-    }
-}
-/*
-=====================================================
-** ESTILOS DO FORMULÁRIO DE CONTATO (MODO CLARO E ESCURO) **
-=====================================================
-*/
-
-/* Layout do grid da seção de contato */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 2.5rem;
-    align-items: flex-start;
-}
-
-/* === ESTILO PADRÃO (MODO CLARO) === */
-/* O formulário se parecerá com um card branco */
-.contact-form-container {
-    background: #ffffff;
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-form-container .form-title {
-    text-align: center;
-    color: #c44569;
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-    transition: color 0.3s ease;
-}
-
-.form-group {
-    margin-bottom: 1.2rem;
-}
-
-.contact-form-container input,
-.contact-form-container textarea {
-    width: 100%;
-    padding: 15px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    background-color: #fdfdfd;
-    color: #333;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-}
-
-.contact-form-container input::placeholder,
-.contact-form-container textarea::placeholder {
-    color: #aaa;
-}
-
-.contact-form-container input:focus,
-.contact-form-container textarea:focus {
-    outline: none;
-    border-color: #ff6b9d;
-    background-color: #ffffff;
-    box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.2);
-}
-
-/* === AJUSTES PARA O MODO ESCURO === */
-/* Aqui o formulário ficará escuro, igual aos outros cards */
-@media (prefers-color-scheme: dark) {
-    .contact-form-container {
-        background: #333; /* Fundo escuro, igual ao .contact-item */
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .contact-form-container .form-title {
-        color: #ffffff; /* Título branco para contraste */
-    }
-
-    .contact-form-container input,
-    .contact-form-container textarea {
-        background-color: #444; /* Fundo do campo um pouco mais claro */
-        color: #ffffff;         /* Texto branco */
-        border-color: #555;     /* Borda sutil */
-    }
-
-    .contact-form-container input::placeholder,
-    .contact-form-container textarea::placeholder {
-        color: #bbb;
-    }
-    
-    .contact-form-container input:focus,
-    .contact-form-container textarea:focus {
-        background-color: #505050;
-        border-color: #ff6b9d; /* O destaque rosa é mantido */
-    }
-}
-
-
-/* === AJUSTES PARA TELAS MENORES === */
-@media screen and (max-width: 992px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .contact-form-container {
-        padding: 2rem;
-    }
-}
-
-/*
-=====================================================
-** ESTILO PARA O BOTÃO DE DOWNLOAD (GRATUITOS) **
-=====================================================
-*/
-
-.btn-download {
-    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-    color: white;
-    width: 100%;
-    justify-content: center;
-    font-size: 1.1rem;
-    padding: 15px 30px;
-    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
-    text-decoration: none; /* Garante que não terá sublinhado */
-}
-
-.btn-download:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 30px rgba(40, 167, 69, 0.6);
-    color: white; /* Mantém a cor do texto branca no hover */
-}
-
-/*
-=====================================================
-** AJUSTE PARA UNIFORMIZAR ALTURA DOS CARDS **
-=====================================================
-*/
-
-/* 1. Transforma o card em um container flexível vertical */
-.product-card {
-    display: flex;
-    flex-direction: column;
-}
-
-/* 2. Faz a área de conteúdo (texto) crescer para ocupar o espaço vago */
-.product-content {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Permite que este elemento se estique */
-}
-
-/* 3. Empurra o bloco do botão para o fundo do card */
-.product-actions {
-    margin-top: auto; /* A mágica acontece aqui! */
 }
