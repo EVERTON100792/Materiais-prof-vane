@@ -1843,3 +1843,27 @@ section {
     box-shadow: 0 8px 30px rgba(40, 167, 69, 0.6);
     color: white; /* Mantém a cor do texto branca no hover */
 }
+
+/*
+=====================================================
+** AJUSTE PARA UNIFORMIZAR ALTURA DOS CARDS **
+=====================================================
+*/
+
+/* 1. Transforma o card em um container flexível vertical */
+.product-card {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. Faz a área de conteúdo (texto) crescer para ocupar o espaço vago */
+.product-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que este elemento se estique */
+}
+
+/* 3. Empurra o bloco do botão para o fundo do card */
+.product-actions {
+    margin-top: auto; /* A mágica acontece aqui! */
+}
