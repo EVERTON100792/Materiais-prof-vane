@@ -1,29 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Materiais pedagógicos em PDF de alta qualidade para educadores e estudantes">
     <meta name="keywords" content="materiais pedagógicos, PDF, educação, ensino, atividades escolares">
     <title>Prof Vane PDFs - Materiais Pedagógicos Digitais de Qualidade</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <link rel="stylesheet" href="styles.css">
 
     <style>
+        /* Correção do carrinho para adicionar barra de rolagem */
         .cart-body {
-            /* Define uma altura máxima para a área dos itens. Usei 45vh (45% da altura da tela) para ser responsivo. */
-            max-height: 45vh; 
-            /* Adiciona uma barra de rolagem vertical apenas quando o conteúdo ultrapassar a altura máxima. */
+            max-height: 45vh;
             overflow-y: auto;
-            /* Adiciona um pequeno espaço à direita para a barra de rolagem não cobrir o conteúdo. */
             padding-right: 10px;
+        }
+
+        /* Ajuste na seção "Sobre" após remover as estatísticas */
+        .about-content {
+            /* Força o layout a ter apenas uma coluna centralizada */
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+
+        .about-text {
+            /* Centraliza o conteúdo de texto que restou */
+            text-align: center;
+        }
+
+        .features-list {
+            /* Garante que a lista de diferenciais permaneça alinhada à esquerda dentro do bloco centralizado */
+            text-align: left;
+            display: inline-grid;
         }
     </style>
 </head>
+
 <body>
     <header class="header">
         <nav class="navbar">
@@ -32,7 +51,7 @@
                     <img src="assets/logo.svg" alt="Prof Vane PDFs Logo">
                     <span>Prof Vane PDFs</span>
                 </div>
-                
+
                 <ul class="nav-menu">
                     <li class="nav-item">
                         <a href="#home" class="nav-link">Início</a>
@@ -47,19 +66,9 @@
                         <a href="#contato" class="nav-link">Contato</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#depoimentos" class="nav-link">Depoimentos</a>
-                    </li>
-                    <li class="nav-item">
                         <a href="#faq" class="nav-link">FAQ</a>
                     </li>
                 </ul>
-                
-                <div class="cart-container">
-                    <button class="cart-btn" id="cart-btn">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count" id="cart-count">0</span>
-                    </button>
-                </div>
 
                 <div class="nav-toggle" id="mobile-menu">
                     <span class="bar"></span>
@@ -78,7 +87,7 @@
                     Materiais Pedagógicos Únicos
                 </h1>
                 <p class="hero-description">
-                    Descubra materiais pedagógicos únicos criados pela Prof Vane! 
+                    Descubra materiais pedagógicos únicos criados pela Prof Vane!
                     PDFs educativos que transformam o aprendizado em diversão e conhecimento.
                 </p>
                 <div class="hero-buttons">
@@ -102,7 +111,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="hero-bg-elements">
             <div class="bg-element bg-element-1"></div>
             <div class="bg-element bg-element-2"></div>
@@ -118,114 +127,33 @@
                     Descubra nossa coleção exclusiva de PDFs educacionais
                 </p>
             </div>
-            
+
             <div class="products-grid">
                 <div class="product-card" data-aos="fade-up">
                     <div class="product-image">
-                        <i class="fas fa-book-open"></i>
+                        <img src="Imagens capas/CAPA Ditado Naval V e F.JPG" alt="Capa do produto Ditado Naval V e F">
                         <div class="product-badge">Novo</div>
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">Atividades de Alfabetização</h3>
+                        <h3 class="product-title">Ditado Naval V e F</h3>
                         <p class="product-description">
-                            Pack completo com 50 atividades para alfabetização infantil. 
-                            Exercícios lúdicos e didáticos para crianças de 4 a 7 anos.
+                            Aprenda a diferenciar V e F brincando! O Ditado Naval é um jogo inspirado em batalha naval
+                            que ensina ortografia de forma rápida, lúdica e eficaz.
                         </p>
                         <div class="product-features">
-                            <span class="feature">
-                                <i class="fas fa-file-pdf"></i>
-                                50 Páginas
-                            </span>
-                            <span class="feature">
-                                <i class="fas fa-download"></i>
-                                Download Imediato
-                            </span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-old">R$ 49,90</span>
-                            <span class="price-current">R$ 29,90</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn btn-add-cart" onclick="addToCart(1, 'Atividades de Alfabetização', 29.90)">
-                                <i class="fas fa-cart-plus"></i>
-                                Adicionar ao Carrinho
-                            </button>
-                            <button class="btn btn-buy" data-hotmart-link="SEU_LINK_HOTMART_AQUI_1">
-                                <i class="fas fa-shopping-cart"></i>
-                                Comprar Agora
-                            </button>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="product-image">
-                        <i class="fas fa-calculator"></i>
-                        <div class="product-badge popular">Popular</div>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Matemática Fundamental</h3>
-                        <p class="product-description">
-                            Coleção completa de exercícios de matemática para ensino fundamental. 
-                            Problemas graduais do básico ao avançado.
-                        </p>
-                        <div class="product-features">
-                            <span class="feature">
-                                <i class="fas fa-file-pdf"></i>
-                                80 Páginas
-                            </span>
                             <span class="feature">
                                 <i class="fas fa-download"></i>
                                 Download Imediato
                             </span>
                         </div>
                         <div class="product-price">
-                            <span class="price-old">R$ 69,90</span>
-                            <span class="price-current">R$ 39,90</span>
+                            <span class="price-old">R$ 19,90</span>
+                            <span class="price-current">R$ 10,00</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-add-cart" onclick="addToCart(2, 'Matemática Fundamental', 39.90)">
-                                <i class="fas fa-cart-plus"></i>
-                                Adicionar ao Carrinho
-                            </button>
-                            <button class="btn btn-buy" data-hotmart-link="SEU_LINK_HOTMART_AQUI_2">
-                                <i class="fas fa-shopping-cart"></i>
-                                Comprar Agora
-                            </button>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="product-image">
-                        <i class="fas fa-globe-americas"></i>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Geografia Interativa</h3>
-                        <p class="product-description">
-                            Mapas, atividades e exercícios de geografia para todos os níveis. 
-                            Material visual e interativo para facilitar o aprendizado.
-                        </p>
-                        <div class="product-features">
-                            <span class="feature">
-                                <i class="fas fa-file-pdf"></i>
-                                60 Páginas
-                            </span>
-                            <span class="feature">
-                                <i class="fas fa-download"></i>
-                                Download Imediato
-                            </span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-old">R$ 59,90</span>
-                            <span class="price-current">R$ 34,90</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn btn-add-cart" onclick="addToCart(3, 'Geografia Interativa', 34.90)">
-                                <i class="fas fa-cart-plus"></i>
-                                Adicionar ao Carrinho
-                            </button>
-                            <button class="btn btn-buy" data-hotmart-link="SEU_LINK_HOTMART_AQUI_3">
+                            <button class="btn btn-buy" data-hotmart-link="https://pay.hotmart.com/R100854508Q">
                                 <i class="fas fa-shopping-cart"></i>
                                 Comprar Agora
                             </button>
@@ -235,34 +163,27 @@
 
                 <div class="product-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="product-image">
-                        <i class="fas fa-language"></i>
+                        <img src="Imagens capas/CAPA Ditado Naval B e P.JPG" alt="Ditado naval B e P">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">Português Dinâmico</h3>
+                        <h3 class="product-title">Ditado Naval B e P</h3>
                         <p class="product-description">
-                            Exercícios completos de língua portuguesa com foco em gramática, 
-                            interpretação de texto e produção textual.
+                            O jogo divertido para dominar as letras B e P! Uma releitura do clássico Batalha Naval que transforma a ortografia em uma aventura, estimulando o vocabulário e a atenção das crianças.
                         </p>
                         <div class="product-features">
-                            <span class="feature">
-                                <i class="fas fa-file-pdf"></i>
-                                70 Páginas
-                            </span>
+
                             <span class="feature">
                                 <i class="fas fa-download"></i>
                                 Download Imediato
                             </span>
                         </div>
                         <div class="product-price">
-                            <span class="price-old">R$ 64,90</span>
-                            <span class="price-current">R$ 37,90</span>
+                            <span class="price-old">R$ 19,90</span>
+                            <span class="price-current">R$ 10,00</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-add-cart" onclick="addToCart(4, 'Português Dinâmico', 37.90)">
-                                <i class="fas fa-cart-plus"></i>
-                                Adicionar ao Carrinho
-                            </button>
-                            <button class="btn btn-buy" data-hotmart-link="SEU_LINK_HOTMART_AQUI_4">
+
+                            <button class="btn btn-buy" data-hotmart-link="https://pay.hotmart.com/Q100861943Q">
                                 <i class="fas fa-shopping-cart"></i>
                                 Comprar Agora
                             </button>
@@ -270,36 +191,33 @@
                     </div>
                 </div>
 
-                <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="product-image">
-                        <i class="fas fa-flask"></i>
+                        <img src="Imagens capas/CAPA Ditado Naval Vogais.jpg" alt="Ditado Naval Vogais">
+                        <div class="product-badge popular">Popular</div>
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">Ciências Experimentais</h3>
+                        <h3 class="product-title">Ditado Naval Vogais</h3>
                         <p class="product-description">
-                            Experimentos práticos e atividades de ciências naturais. 
-                            Material didático para tornar as aulas mais interessantes.
+                            Aprenda as vogais de forma divertida e interativa! Inspirado no clássico jogo de batalha
+                            naval, este material desenvolve a leitura, a escrita e a associação entre palavras e imagens
+                            de um jeito lúdico, dinâmico e eficaz.
                         </p>
                         <div class="product-features">
-                            <span class="feature">
-                                <i class="fas fa-file-pdf"></i>
-                                45 Páginas
-                            </span>
+
                             <span class="feature">
                                 <i class="fas fa-download"></i>
                                 Download Imediato
                             </span>
                         </div>
                         <div class="product-price">
-                            <span class="price-old">R$ 54,90</span>
-                            <span class="price-current">R$ 32,90</span>
+                            <span class="price-old">R$ 19,90</span>
+                            <span class="price-current">R$ 10,00</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-add-cart" onclick="addToCart(5, 'Ciências Experimentais', 32.90)">
-                                <i class="fas fa-cart-plus"></i>
-                                Adicionar ao Carrinho
-                            </button>
-                            <button class="btn btn-buy" data-hotmart-link="SEU_LINK_HOTMART_AQUI_5">
+
+                            <button class="btn btn-buy" data-hotmart-link="https://pay.hotmart.com/C100854875M">
                                 <i class="fas fa-shopping-cart"></i>
                                 Comprar Agora
                             </button>
@@ -307,42 +225,101 @@
                     </div>
                 </div>
 
-                <div class="product-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="product-image">
-                        <i class="fas fa-clock"></i>
+                        <img src="Imagens capas/CAPA Recurso - Confronto V e F.jpg" alt="Confronto V e F">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">História Ilustrada</h3>
+                        <h3 class="product-title">Recurso - Confronto V e F</h3>
                         <p class="product-description">
-                            Linha do tempo interativa e atividades sobre história do Brasil 
-                            e mundial. Conteúdo visual e envolvente.
+                            Aprenda a diferenciar F e V de um jeito divertido! Criado para turmas em fase de
+                            alfabetização, este recurso usa atividades lúdicas que facilitam a compreensão da escrita e
+                            tornam o aprendizado mais fácil e envolvente.
                         </p>
                         <div class="product-features">
-                            <span class="feature">
-                                <i class="fas fa-file-pdf"></i>
-                                65 Páginas
-                            </span>
+
                             <span class="feature">
                                 <i class="fas fa-download"></i>
                                 Download Imediato
                             </span>
                         </div>
                         <div class="product-price">
-                            <span class="price-old">R$ 62,90</span>
-                            <span class="price-current">R$ 36,90</span>
+                            <span class="price-old">R$ 7,90</span>
+                            <span class="price-current">R$ 4,00</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-add-cart" onclick="addToCart(6, 'História Ilustrada', 36.90)">
-                                <i class="fas fa-cart-plus"></i>
-                                Adicionar ao Carrinho
-                            </button>
-                            <button class="btn btn-buy" data-hotmart-link="SEU_LINK_HOTMART_AQUI_6">
+
+                            <button class="btn btn-buy" data-hotmart-link="https://pay.hotmart.com/C100854252E">
                                 <i class="fas fa-shopping-cart"></i>
                                 Comprar Agora
                             </button>
                         </div>
                     </div>
                 </div>
+
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-image">
+                        <img src="Imagens capas/CAPA Jogo troca silabas.JPG" alt="Jogo troca silabas">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Jogo Troca Sílabas </h3>
+                        <p class="product-description">
+                            O "Jogo Troca Sílabas" é uma atividade divertida para montar palavras e exercitar a criatividade. O objetivo do jogo é formar o maior número de palavras novas, aproveitando sempre uma sílaba da palavra criada anteriormente pelo oponente.
+                        </p>
+                        <div class="product-features">
+
+                            <span class="feature">
+                                <i class="fas fa-download"></i>
+                                Download Imediato
+                            </span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-old">R$ 7,90</span>
+                            <span class="price-current">R$ 4,00</span>
+                        </div>
+                        <div class="product-actions">
+
+                            <button class="btn btn-buy" data-hotmart-link="https://pay.hotmart.com/C101076766S">
+                                <i class="fas fa-shopping-cart"></i>
+                                Comprar Agora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-image">
+                        <img src="Imagens capas/CAPA Sequencia didatica.pg.jpg" alt="cantiga careca da vovo">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Sequencia didática - Cantiga Careca do Vovô</h3>
+                        <p class="product-description">
+                            Ensine a letra B de forma lúdica e completa! Baseada na cantiga "Careca do Vovô", esta
+                            sequência didática guia os alunos do fonema à escrita de frases com atividades prontas,
+                            práticas e envolventes.
+                        </p>
+                        <div class="product-features">
+
+                            <span class="feature">
+                                <i class="fas fa-download"></i>
+                                Download Imediato
+                            </span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-old">R$ 7,90</span>
+                            <span class="price-current">R$ 4,00</span>
+                        </div>
+                        <div class="product-actions">
+
+                            <button class="btn btn-buy" data-hotmart-link="https://pay.hotmart.com/J100861624W">
+                                <i class="fas fa-shopping-cart"></i>
+                                Comprar Agora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </section>
@@ -353,11 +330,11 @@
                 <div class="about-text" data-aos="fade-right">
                     <h2 class="section-title">Por que escolher nossos materiais?</h2>
                     <p class="about-description">
-                        Somos especialistas em educação com mais de 10 anos de experiência na criação 
-                        de materiais pedagógicos. Nossos PDFs são desenvolvidos por educadores 
+                        Somos especialistas em educação com mais de 10 anos de experiência na criação
+                        de materiais pedagógicos. Nossos PDFs são desenvolvidos por educadores
                         qualificados e testados em sala de aula.
                     </p>
-                    
+
                     <div class="features-list">
                         <div class="feature-item">
                             <i class="fas fa-check-circle"></i>
@@ -389,85 +366,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="about-stats" data-aos="fade-left">
-                    <div class="stat-item">
-                        <div class="stat-number">5000+</div>
-                        <div class="stat-label">Educadores Satisfeitos</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Materiais Disponíveis</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">Satisfação dos Clientes</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="depoimentos" class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">O que dizem nossos clientes</h2>
-                <p class="section-subtitle">
-                    Depoimentos de educadores que transformaram suas aulas
-                </p>
-            </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card" data-aos="fade-up">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Os materiais da Prof Vane revolucionaram minhas aulas! Meus alunos estão muito mais engajados e o aprendizado ficou mais divertido."</p>
-                        <div class="testimonial-author">
-                            <h4>Maria Silva</h4>
-                            <span>Professora de Alfabetização</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Qualidade excepcional! Os PDFs são bem estruturados e economizei muito tempo na preparação das aulas."</p>
-                        <div class="testimonial-author">
-                            <h4>João Santos</h4>
-                            <span>Professor de Matemática</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Recomendo para todos os colegas! Material de altíssima qualidade e suporte incrível da Prof Vane."</p>
-                        <div class="testimonial-author">
-                            <h4>Ana Costa</h4>
-                            <span>Coordenadora Pedagógica</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -480,7 +378,7 @@
                     Tire suas dúvidas sobre nossos materiais pedagógicos
                 </p>
             </div>
-            
+
             <div class="faq-container">
                 <div class="faq-item" data-aos="fade-up">
                     <div class="faq-question">
@@ -488,37 +386,41 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Após a compra, você recebe imediatamente o link para download dos materiais em PDF. Todos os arquivos ficam disponíveis para download ilimitado.</p>
+                        <p>Após a compra, você recebe imediatamente o link para download dos materiais em PDF. Todos os
+                            arquivos ficam disponíveis para download ilimitado.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
                     <div class="faq-question">
                         <h4>Posso usar os materiais em sala de aula?</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Sim! Todos os materiais são desenvolvidos especificamente para uso em sala de aula. Você pode imprimir e utilizar quantas vezes quiser.</p>
+                        <p>Sim! Todos os materiais são desenvolvidos especificamente para uso em sala de aula. Você pode
+                            imprimir e utilizar quantas vezes quiser.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="faq-question">
                         <h4>Existe alguma garantia?</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Oferecemos garantia de 7 dias. Se não ficar satisfeito, devolvemos seu dinheiro sem perguntas.</p>
+                        <p>Oferecemos garantia de 7 dias. Se não ficar satisfeito, devolvemos seu dinheiro sem
+                            perguntas.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
                     <div class="faq-question">
                         <h4>Como entro em contato se tiver dúvidas?</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Você pode entrar em contato diretamente pelo WhatsApp ou e-mail. Respondemos rapidamente a todas as mensagens.</p>
+                        <p>Você pode entrar em contato diretamente pelo WhatsApp ou e-mail. Respondemos rapidamente a
+                            todas as mensagens.</p>
                     </div>
                 </div>
             </div>
@@ -530,11 +432,11 @@
             <div class="section-header">
                 <h2 class="section-title">Entre em Contato</h2>
                 <p class="section-subtitle">
-                    Tire suas dúvidas e saiba mais sobre nossos materiais
+                    Tire suas dúvidas, envie sugestões ou solicite um orçamento!
                 </p>
             </div>
-            
-            <div class="contact-content">
+
+            <div class="contact-grid">
                 <div class="contact-info">
                     <div class="contact-item" data-aos="fade-up">
                         <div class="contact-icon">
@@ -543,12 +445,13 @@
                         <div class="contact-details">
                             <h4>WhatsApp</h4>
                             <p>Atendimento rápido e personalizado</p>
-                            <a href="https://wa.me/5511999999999" class="contact-link">
+                            <a href="https://wa.me/5543999374975" class="contact-link" target="_blank"
+                                rel="noopener noreferrer">
                                 Conversar no WhatsApp
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
@@ -556,22 +459,43 @@
                         <div class="contact-details">
                             <h4>E-mail</h4>
                             <p>Envie sua mensagem a qualquer hora</p>
-                            <a href="mailto:contato@profvanepdfs.com" class="contact-link">
-                                contato@profvanepdfs.com
+                            <a href="mailto:vanessafigueiredodecastro@gmail.com" class="contact-link">
+                                vanessafigueiredodecastro@gmail.com
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
                         <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
+                            <i class="fas fa-globe"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>Horário de Atendimento</h4>
-                            <p>Segunda a Sexta: 8h às 18h</p>
-                            <p>Sábado: 8h às 12h</p>
+                            <h4>Disponibilidade</h4>
+                            <p><strong>Loja Online:</strong> 24 horas por dia.</p>
+                            <p><strong>Suporte:</strong> Respostas em até 24h.</p>
                         </div>
                     </div>
+                </div>
+
+                <div class="contact-form-container" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="form-title">Ou envie uma mensagem direta</h3>
+
+                    <form action="https://formspree.io/f/SEU_ID_AQUI" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Seu Nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="6"
+                                placeholder="Olá! Gostaria de tirar uma dúvida, dar uma sugestão ou pedir um orçamento..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-form-submit">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -589,19 +513,22 @@
                         Transformando a educação através de materiais pedagógicos digitais de qualidade.
                     </p>
                     <div class="social-links">
-                        <a href="#" class="social-link">
+                        <a href="https://www.facebook.com/seuperfil" target="_blank" rel="noopener noreferrer"
+                            class="social-link">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="https://www.instagram.com/prof.vanefig/" target="_blank" rel="noopener noreferrer"
+                            class="social-link">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="https://www.youtube.com/c/seucanal" target="_blank" rel="noopener noreferrer"
+                            class="social-link">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </div>
                 </div>
-                
-                
+
+
                 <div class="footer-section">
                     <h4>Suporte</h4>
                     <ul class="footer-links">
@@ -611,12 +538,22 @@
                         <li><a href="#">Suporte</a></li>
                     </ul>
                 </div>
-                
+
             </div>
-            
+
+
+            <p class="developer-credit">
+                Site desenvolvido com ❤️ por
+                <a href="https://wa.me/5543998719821?text=Olá!%20Vi%20o%20site%20da%20Prof%20Vane%20e%20gostaria%20de%20fazer%20um%20orçamento."
+                    target="_blank">
+                    Everton Moura | Programador Web
+                </a>.
+            </p>
+
             <div class="footer-bottom">
                 <p>&copy; 2025 Prof Vane PDFs. Todos os direitos reservados.</p>
             </div>
+
         </div>
     </footer>
 
@@ -646,10 +583,8 @@
         </div>
     </div>
 
-    <a href="https://wa.me/5511999999999?text=Olá%20Prof%20Vane!%20Gostaria%20de%20saber%20mais%20sobre%20os%20materiais%20pedagógicos." 
-       class="whatsapp-float" 
-       target="_blank"
-       rel="noopener noreferrer">
+    <a href="https://wa.me/554399374975?stext=Olá%20Prof%20Vane!%20Gostaria%20de%20saber%20mais%20sobre%20os%20materiais%20pedagógicos."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
         <span class="whatsapp-text">Fale com Prof Vane</span>
     </a>
@@ -665,6 +600,8 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+
     <script src="script.js"></script>
 </body>
+
 </html>

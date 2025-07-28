@@ -1820,3 +1820,26 @@ section {
         padding: 2rem;
     }
 }
+
+/*
+=====================================================
+** ESTILO PARA O BOTÃO DE DOWNLOAD (GRATUITOS) **
+=====================================================
+*/
+
+.btn-download {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    width: 100%;
+    justify-content: center;
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+    text-decoration: none; /* Garante que não terá sublinhado */
+}
+
+.btn-download:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(40, 167, 69, 0.6);
+    color: white; /* Mantém a cor do texto branca no hover */
+}
