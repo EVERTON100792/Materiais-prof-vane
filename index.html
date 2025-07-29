@@ -25,18 +25,15 @@
 
         /* Ajuste na seção "Sobre" após remover as estatísticas */
         .about-content {
-            /* Força o layout a ter apenas uma coluna centralizada */
             grid-template-columns: 1fr;
             justify-items: center;
         }
 
         .about-text {
-            /* Centraliza o conteúdo de texto que restou */
             text-align: center;
         }
 
         .features-list {
-            /* Garante que a lista de diferenciais permaneça alinhada à esquerda dentro do bloco centralizado */
             text-align: left;
             display: inline-grid;
         }
@@ -72,6 +69,11 @@
                         <a href="#faq" class="nav-link">FAQ</a>
                     </li>
                 </ul>
+
+                <button id="theme-toggle" class="theme-toggle-btn" title="Alterar tema">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
 
                 <div class="nav-toggle" id="mobile-menu">
                     <span class="bar"></span>
@@ -336,16 +338,18 @@
                             do alfabeto. Ideal para crianças em fase de pré-alfabetização.
                         </p>
                         <div class="product-actions">
-                            <a href="Pdfs Gratuitos/FLORES DO F.pdf"
-                                class="btn btn-download" download>
+                            <a href="Pdfs Gratuitos/FLORES DO F.pdf" class="btn btn-download" download>
                                 <i class="fas fa-download"></i>
                                 Baixar PDF
                             </a>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                </div> </div> </section> <section id="sobre" class="about">
+    <section id="sobre" class="about">
         <div class="container">
             <div class="about-content">
                 <div class="about-text" data-aos="fade-right">
@@ -574,32 +578,6 @@
         </div>
     </footer>
 
-    <div id="cart-modal" class="cart-modal">
-        <div class="cart-modal-content">
-            <div class="cart-header">
-                <h3>Carrinho de Compras</h3>
-                <button class="close-cart" onclick="closeCart()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="cart-body" id="cart-items">
-                <div class="empty-cart">
-                    <i class="fas fa-shopping-cart"></i>
-                    <p>Seu carrinho está vazio</p>
-                </div>
-            </div>
-            <div class="cart-footer">
-                <div class="cart-total">
-                    <span>Total: R$ <span id="cart-total">0,00</span></span>
-                </div>
-                <button class="btn btn-checkout" onclick="checkout()">
-                    <i class="fas fa-credit-card"></i>
-                    Finalizar Compra
-                </button>
-            </div>
-        </div>
-    </div>
-
     <a href="https://wa.me/554399374975?stext=Olá%20Prof%20Vane!%20Gostaria%20de%20saber%20mais%20sobre%20os%20materiais%20pedagógicos."
         class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
@@ -618,6 +596,45 @@
     </button>
 
     <script src="script.js"></script>
-</body>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
 
+            // Função para ativar o modo escuro
+            const enableDarkMode = () => {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            };
+
+            // Função para desativar o modo escuro
+            const disableDarkMode = () => {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            };
+
+            // Evento de clique no botão
+            themeToggle.addEventListener('click', () => {
+                // Verifica o estado atual pelo localStorage para decidir a ação
+                if (localStorage.getItem('theme') === 'dark') {
+                    disableDarkMode();
+                } else {
+                    enableDarkMode();
+                }
+            });
+
+            // Verifica a preferência do usuário ao carregar a página
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            // Aplica o tema salvo ou o do sistema
+            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                enableDarkMode();
+            } else {
+                disableDarkMode(); // Garante que o estado inicial seja o claro se não houver preferência
+            }
+        });
+    </script>
+</body>
 </html>
