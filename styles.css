@@ -809,131 +809,147 @@ body.dark-mode .faq-item {
 }
 
 /* ============================================= */
-/* FOOTER                                        */
+/* FOOTER (VERSÃO CORRIGIDA E ROBUSTA)            */
 /* ============================================= */
+
+/* --- Estilos para o MODO CLARO --- */
 .footer {
-    background: #f1f1f1;
-    color: var(--text-light-muted);
-    padding: 4rem 0 2rem;
-}
-body.dark-mode .footer {
-    background: var(--text-light); /* Fundo escuro #2c3e50 no dark mode */
+    background: var(--background-light-alt); /* Fundo cinza bem claro (#f8f9fa) */
+    color: var(--text-light-muted);        /* Cor de texto padrão escura (#5E6E80) */
+    padding: 4rem 20px 2rem;
+    transition: background-color 0.3s ease;
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .footer-section {
-    padding-right: 2rem;
+    padding-right: 1rem;
 }
 
 .footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    text-decoration: none;
-    color: var(--text-light);
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
+
 .footer-logo img {
-    width: 40px;
-    height: 40px;
-}
-body.dark-mode .footer-logo {
-    color: var(--text-dark);
+    width: 40px;
+    height: 40px;
 }
 
-.footer-description {
-    margin-bottom: 1.5rem;
-}
-
-.footer-section h4 { /* Título "Suporte" */
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text-light);
-    margin-bottom: 1rem;
-}
-body.dark-mode .footer-section h4 {
-    color: var(--text-dark);
+.footer-section h4 {
+    color: var(--text-light);
+    margin-bottom: 1rem;
 }
 
 .footer-links {
-    list-style: none;
+    list-style: none;
 }
+
 .footer-links li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
+
 .footer-links a {
-    color: var(--text-light-muted);
-    text-decoration: none;
-    transition: color 0.3s ease;
+    color: var(--text-light-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
+
 .footer-links a:hover {
-    color: var(--primary-color);
-}
-body.dark-mode .footer-links a {
-    color: #ccc;
+    color: var(--primary-color);
 }
 
 .social-links {
-    display: flex;
-    gap: 1rem;
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
+
 .social-link {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background: #e0e0e0;
-    color: #2c3e50;
-    border-radius: 50%;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: #e9ecef; /* Fundo do ícone cinza um pouco mais escuro */
+    color: #2c3e50;     /* Cor do ícone escura */
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
 }
+
 .social-link:hover {
-    background: var(--primary-color);
-    color: #fff;
-    transform: translateY(-4px);
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-4px);
 }
-body.dark-mode .social-link {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
+
+.developer-credit,
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6c757d;
 }
 
 .developer-credit {
-    text-align: center;
-    padding-top: 2rem;
-    margin-top: 2rem;
-    border-top: 1px solid #ddd;
-    font-size: 0.9rem;
-    color: #6c757d;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid #ddd;
 }
+
 .developer-credit a {
-    color: var(--primary-color);
-    font-weight: 500;
-    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
 }
+
 .developer-credit a:hover {
-    text-decoration: underline;
+    text-decoration: underline;
 }
 
 .footer-bottom {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #6c757d;
-    padding-top: 0.5rem;
+    padding-top: 0.5rem;
 }
 
-body.dark-mode .developer-credit, body.dark-mode .footer-bottom {
-    border-top-color: rgba(255, 255, 255, 0.1);
-    color: #ccc;
+
+/* --- Estilos para o MODO ESCURO (SOBREPOSIÇÃO) --- */
+body.dark-mode .footer {
+    background: #2c3e50; /* Fundo azul-escuro */
+    color: #ccc;         /* Define a cor de texto PADRÃO para o modo escuro, resolvendo o problema principal */
+}
+
+body.dark-mode .footer-logo,
+body.dark-mode .footer-section h4 {
+    color: #fff; /* Deixa o logo e títulos brancos */
+}
+
+body.dark-mode .footer-links a {
+    color: #ccc; /* Deixa os links de navegação claros */
+}
+
+body.dark-mode .social-link {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+body.dark-mode .developer-credit,
+body.dark-mode .footer-bottom {
+    border-top-color: rgba(255, 255, 255, 0.1);
+    color: #ccc;
 }
 
 
