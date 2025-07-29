@@ -960,3 +960,31 @@ body.dark-mode .theme-toggle-btn .fa-moon {
         justify-content: initial;
     }
 }
+/* ================================================== */
+/* CORREÇÃO PARA O MENU MOBILE NO TEMA ESCURO */
+/* ================================================== */
+@media screen and (max-width: 768px) {
+    /*
+     Esta regra garante que, quando o tema escuro estiver ativo,
+     o fundo do menu lateral (sidebar) fique escuro.
+    */
+    body.dark-mode .nav-menu {
+        background: linear-gradient(135deg, #2c3e50 0%, #1a1a1a 100%);
+    }
+
+    /*
+     Esta regra garante que os links dentro do menu lateral
+     fiquem brancos e legíveis no fundo escuro.
+    */
+    body.dark-mode .nav-menu .nav-link {
+        color: #ffffff !important;
+    }
+
+    /*
+     Esta regra dá um efeito de destaque quando o usuário
+     passa o mouse ou toca em um link no menu escuro.
+    */
+    body.dark-mode .nav-menu .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
