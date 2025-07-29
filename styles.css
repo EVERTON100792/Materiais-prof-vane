@@ -809,147 +809,171 @@ body.dark-mode .faq-item {
 }
 
 /* ============================================= */
-/* FOOTER (VERSÃO CORRIGIDA E ROBUSTA)            */
+/* FOOTER (VERSÃO FINAL E CORRIGIDA)             */
 /* ============================================= */
 
-/* --- Estilos para o MODO CLARO --- */
 .footer {
-    background: var(--background-light-alt); /* Fundo cinza bem claro (#f8f9fa) */
-    color: var(--text-light-muted);        /* Cor de texto padrão escura (#5E6E80) */
-    padding: 4rem 20px 2rem;
-    transition: background-color 0.3s ease;
+    background: var(--background-light-alt);
+    color: var(--text-light-muted);
+    padding: 4rem 20px 2rem;
+    transition: background-color 0.3s ease;
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    display: grid;
+    /* MUDANÇA PRINCIPAL NO LAYOUT: Definindo colunas explícitas. */
+    /* A primeira coluna (descrição) ocupará 1.5x o espaço da segunda (links). */
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start; /* Alinha os itens no topo de cada coluna. */
 }
 
 .footer-section {
-    padding-right: 1rem;
+    padding-right: 1rem;
 }
 
 .footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    text-decoration: none;
-    color: var(--text-light);
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 .footer-logo img {
-    width: 40px;
-    height: 40px;
+    width: 40px;
+    height: 40px;
 }
 
 .footer-section h4 {
-    color: var(--text-light);
-    margin-bottom: 1rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
 }
 
 .footer-links {
-    list-style: none;
+    list-style: none;
 }
 
 .footer-links li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .footer-links a {
-    color: var(--text-light-muted);
-    text-decoration: none;
-    transition: color 0.3s ease;
+    color: var(--text-light-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .social-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
 .social-link {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background: #e9ecef; /* Fundo do ícone cinza um pouco mais escuro */
-    color: #2c3e50;     /* Cor do ícone escura */
-    border-radius: 50%;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: #e9ecef;
+    color: #2c3e50;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
 }
 
 .social-link:hover {
-    background: var(--primary-color);
-    color: #fff;
-    transform: translateY(-4px);
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-4px);
 }
 
 .developer-credit,
 .footer-bottom {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #6c757d;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6c757d;
 }
 
 .developer-credit {
-    padding-top: 2rem;
-    margin-top: 2rem;
-    border-top: 1px solid #ddd;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid #ddd;
 }
 
 .developer-credit a {
-    color: var(--primary-color);
-    font-weight: 500;
-    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
 }
 
 .developer-credit a:hover {
-    text-decoration: underline;
+    text-decoration: underline;
 }
 
 .footer-bottom {
-    padding-top: 0.5rem;
+    padding-top: 0.5rem;
 }
 
-
-/* --- Estilos para o MODO ESCURO (SOBREPOSIÇÃO) --- */
+/* --- Estilos para o MODO ESCURO --- */
 body.dark-mode .footer {
-    background: #2c3e50; /* Fundo azul-escuro */
-    color: #ccc;         /* Define a cor de texto PADRÃO para o modo escuro, resolvendo o problema principal */
+    background: #1f1f1f; /* Fundo um pouco mais claro que o body para se destacar */
+    color: #a0a0a0;      /* Cor padrão do texto mais suave */
 }
 
 body.dark-mode .footer-logo,
 body.dark-mode .footer-section h4 {
-    color: #fff; /* Deixa o logo e títulos brancos */
+    color: #fff;
 }
 
-body.dark-mode .footer-links a {
-    color: #ccc; /* Deixa os links de navegação claros */
+/* CORREÇÃO DA COR AZUL: Regra mais específica para os links */
+body.dark-mode .footer .footer-links a {
+    color: #a0a0a0; /* Mesma cor suave do parágrafo */
+}
+
+body.dark-mode .footer .footer-links a:hover {
+    color: var(--primary-color); /* Mantém o destaque rosa */
 }
 
 body.dark-mode .social-link {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
+    background: #333;
+    color: #fff;
 }
 
 body.dark-mode .developer-credit,
 body.dark-mode .footer-bottom {
-    border-top-color: rgba(255, 255, 255, 0.1);
-    color: #ccc;
+    border-top-color: #333;
+    color: #a0a0a0;
+}
+
+/* --- AJUSTE RESPONSIVO PARA O LAYOUT --- */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        /* No celular, volta a ser uma coluna única */
+        grid-template-columns: 1fr;
+        text-align: center; /* Centraliza o conteúdo */
+    }
+
+    .footer-section {
+        padding-right: 0;
+    }
+    
+    /* Centraliza o logo e os ícones sociais no modo de uma coluna */
+    .footer-logo, .social-links {
+        justify-content: center;
+    }
 }
 
 
