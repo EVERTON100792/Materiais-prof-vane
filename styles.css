@@ -734,7 +734,6 @@ section {
     padding: 3rem 0 1rem;
 }
 
-/* LAYOUT DO RODAPÉ PARA DESKTOP */
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -764,6 +763,39 @@ section {
 
 .footer-links a:hover {
     color: #ff6b9d;
+}
+
+/* Adicione as novas regras abaixo */
+.developer-credit,
+.footer-bottom {
+    text-align: center; /* Centraliza o texto */
+    padding: 1rem 0 0; /* Adiciona um espaçamento */
+}
+
+.developer-credit p,
+.footer-bottom p {
+    margin: 0;
+}
+
+
+.developer-credit a {
+    color: #f8b500; /* Cor de destaque amarela */
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.developer-credit a:hover {
+    color: #ffc048; /* Cor mais clara ao passar o mouse */
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #ccc;
 }
 
 /* =================================== */
