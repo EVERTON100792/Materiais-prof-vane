@@ -988,3 +988,32 @@ body.dark-mode .theme-toggle-btn .fa-moon {
         background: rgba(255, 255, 255, 0.1);
     }
 }
+/* ============================================= */
+/* CORREÇÃO PARA O LAYOUT DO RODAPÉ NO CELULAR */
+/* ============================================= */
+@media screen and (max-width: 768px) {
+    /*
+     Esta regra ajusta o alinhamento do conteúdo do rodapé
+     para a esquerda, o que é melhor para leitura no celular.
+    */
+    .footer-content {
+        text-align: left;
+    }
+
+    /*
+     Esta regra garante que a segunda seção de links ("Suporte")
+     seja exibida no celular, em vez de ficar escondida.
+    */
+    .footer-section:nth-child(2) {
+        display: block;
+    }
+
+    /*
+     Esta regra garante que os ícones das redes sociais
+     não fiquem centralizados, alinhando-se com o resto
+     do texto para um visual mais limpo.
+    */
+    .footer-section .social-links {
+        justify-content: flex-start;
+    }
+}
