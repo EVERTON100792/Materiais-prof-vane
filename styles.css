@@ -988,51 +988,7 @@ body.dark-mode .theme-toggle-btn .fa-moon {
         transform: translateY(-7px) rotate(-45deg);
     }
 
-    /* ================================== */
-    /* INÍCIO - AJUSTES NA SEÇÃO HERO     */
-    /* ================================== */
-
-    .hero {
-        /* Garante que a seção ocupe a tela, mas centralize o conteúdo */
-        align-items: center; 
-        text-align: center;
-        padding-top: 100px; /* Espaço para o cabeçalho */
-        padding-bottom: 50px;
-    }
-
-    .hero-container {
-        /* A regra abaixo já existia, apenas garantimos seu funcionamento */
-        grid-template-columns: 1fr;
-        gap: 3rem; /* Espaçamento entre o texto e a imagem */
-    }
-
-    .hero-title {
-        font-size: 2.5rem; /* Reduz o tamanho do título */
-    }
-
-    .hero-description {
-        font-size: 1.1rem;
-        max-width: 95%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 2rem;
-    }
-
-    .hero-buttons {
-        justify-content: center; /* Centraliza os botões */
-    }
-
-    .hero-graphic {
-        width: 250px; /* Reduz o tamanho da animação */
-        height: 250px;
-        margin: 0 auto; /* Centraliza a animação */
-    }
-
-    /* ================================== */
-    /* FIM - AJUSTES NA SEÇÃO HERO        */
-    /* ================================== */
-
-
+    .hero-container,
     .about-content,
     .contact-grid {
         grid-template-columns: 1fr;
