@@ -16,7 +16,8 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #2c3e50;
-    background-color: #fff; /* Fundo padrão claro */
+    background-color: #fff;
+    /* Fundo padrão claro */
     transition: background-color 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
     width: 100%;
@@ -154,14 +155,6 @@ p {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
-.header.scrolled .nav-link {
-    color: #2c3e50;
-}
-
-.header.scrolled .nav-logo {
-    color: #ff6b9d;
-}
-
 .navbar {
     padding: 1rem 0;
 }
@@ -203,7 +196,7 @@ p {
 
 .nav-link {
     text-decoration: none;
-    color: #333 !important;
+    color: #2c3e50;
     font-weight: 500;
     position: relative;
     transition: color 0.3s ease;
@@ -221,7 +214,7 @@ p {
 }
 
 .nav-link:hover {
-    color: #ff6b9d !important;
+    color: #ff6b9d;
 }
 
 .nav-link:hover::after {
@@ -238,7 +231,7 @@ p {
 .bar {
     width: 25px;
     height: 3px;
-    background: #2c3e50 !important;
+    background: #2c3e50;
     transition: all 0.3s ease;
 }
 
@@ -461,7 +454,6 @@ section {
     position: relative;
     display: flex;
     flex-direction: column;
-    animation: cardFloat 6s ease-in-out infinite;
 }
 
 .product-card:hover {
@@ -592,7 +584,6 @@ section {
     margin-top: auto;
 }
 
-
 /* About Section */
 .about-content {
     display: grid;
@@ -645,7 +636,7 @@ section {
 
 .contact-info {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
 }
 
@@ -690,9 +681,6 @@ section {
     font-weight: 500;
     transition: color 0.3s ease;
     word-break: break-all;
-    overflow-wrap: break-word;
-    max-width: 100%;
-    display: inline-block;
     font-size: 0.9rem;
 }
 
@@ -746,17 +734,36 @@ section {
     padding: 3rem 0 1rem;
 }
 
-/* ... (O resto do seu CSS continua aqui, igual ao que você já tinha) ... */
+/* LAYOUT DO RODAPÉ PARA DESKTOP */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    padding-bottom: 2rem;
+}
 
-.faq-item,
-.faq-answer,
-.contact-item,
-h1,
-h2,
-h3,
-h4,
-p {
-    transition: color 0.3s ease, background-color 0.3s ease;
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ff6b9d;
 }
 
 /* =================================== */
@@ -788,6 +795,7 @@ p {
 .theme-toggle-btn .fa-sun {
     display: none;
 }
+
 .theme-toggle-btn .fa-moon {
     display: block;
 }
@@ -802,10 +810,12 @@ body.dark-mode .header {
     background: rgba(26, 26, 26, 0.95);
 }
 
-body.dark-mode .nav-link,
-body.dark-mode .nav-toggle .bar {
-    color: #f1f1f1 !important;
-    background: #f1f1f1 !important;
+body.dark-mode .nav-link {
+    color: #f1f1f1;
+}
+
+body.dark-mode .bar {
+    background: #f1f1f1;
 }
 
 body.dark-mode .products,
@@ -818,8 +828,7 @@ body.dark-mode .faq {
 body.dark-mode .product-card,
 body.dark-mode .contact-item,
 body.dark-mode .contact-form-container,
-body.dark-mode .faq-item,
-body.dark-mode .stat-item {
+body.dark-mode .faq-item {
     background: #333;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
@@ -836,8 +845,7 @@ body.dark-mode .about-content .section-title {
 body.dark-mode .section-subtitle,
 body.dark-mode p,
 body.dark-mode .product-description,
-body.dark-mode .feature-item p,
-body.dark-mode .stat-label {
+body.dark-mode .feature-item p {
     color: #ccc;
 }
 
@@ -881,14 +889,16 @@ body.dark-mode .theme-toggle-btn .fa-moon {
     display: none;
 }
 
-/* Media Queries (Responsivo) */
+/* ========================================================= */
+/* Media Queries (Responsivo) - REGRAS CONSOLIDADAS E CORRIGIDAS */
+/* ========================================================= */
 @media screen and (max-width: 768px) {
     .nav-container {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-    
+
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -901,10 +911,6 @@ body.dark-mode .theme-toggle-btn .fa-moon {
         z-index: 1000;
         height: calc(100vh - 70px);
         padding-top: 2rem;
-    }
-
-    body.dark-mode .nav-menu {
-        background: linear-gradient(135deg, #333 0%, #222 100%);
     }
 
     .nav-menu.active {
@@ -922,12 +928,14 @@ body.dark-mode .theme-toggle-btn .fa-moon {
 
     .nav-toggle {
         display: flex;
-        order: 3; /* Coloca o menu hamburguer depois do botão de tema */
+        order: 3;
+        /* Coloca o menu hamburguer depois do botão de tema */
         z-index: 1002;
     }
-    
+
     .theme-toggle-btn {
-        order: 2; /* Coloca o botão de tema antes do menu hamburguer */
+        order: 2;
+        /* Coloca o botão de tema antes do menu hamburguer */
         margin-left: 0;
         margin-right: 1rem;
     }
@@ -935,7 +943,7 @@ body.dark-mode .theme-toggle-btn .fa-moon {
     .nav-logo {
         order: 1;
     }
-    
+
     .nav-toggle.active .bar:nth-child(2) {
         opacity: 0;
     }
@@ -953,67 +961,29 @@ body.dark-mode .theme-toggle-btn .fa-moon {
     .contact-grid {
         grid-template-columns: 1fr;
     }
-    
+
     #materiais-gratuitos .products-grid,
     .products-grid {
         grid-template-columns: 1fr;
         justify-content: initial;
     }
-}
-/* ================================================== */
-/* CORREÇÃO PARA O MENU MOBILE NO TEMA ESCURO */
-/* ================================================== */
-@media screen and (max-width: 768px) {
-    /*
-     Esta regra garante que, quando o tema escuro estiver ativo,
-     o fundo do menu lateral (sidebar) fique escuro.
-    */
+
+    /* --- CORREÇÃO DO MENU MOBILE NO TEMA ESCURO --- */
     body.dark-mode .nav-menu {
         background: linear-gradient(135deg, #2c3e50 0%, #1a1a1a 100%);
     }
 
-    /*
-     Esta regra garante que os links dentro do menu lateral
-     fiquem brancos e legíveis no fundo escuro.
-    */
     body.dark-mode .nav-menu .nav-link {
         color: #ffffff !important;
     }
 
-    /*
-     Esta regra dá um efeito de destaque quando o usuário
-     passa o mouse ou toca em um link no menu escuro.
-    */
-    body.dark-mode .nav-menu .nav-link:hover {
-        background: rgba(255, 255, 255, 0.1);
-    }
-}
-/* ============================================= */
-/* CORREÇÃO PARA O LAYOUT DO RODAPÉ NO CELULAR */
-/* ============================================= */
-@media screen and (max-width: 768px) {
-    /*
-     Esta regra ajusta o alinhamento do conteúdo do rodapé
-     para a esquerda, o que é melhor para leitura no celular.
-    */
+    /* --- CORREÇÃO DO LAYOUT DO RODAPÉ NO CELULAR --- */
     .footer-content {
-        text-align: left;
+        grid-template-columns: 1fr; /* Garante uma única coluna */
+        text-align: left; /* Alinha todo o texto à esquerda */
     }
 
-    /*
-     Esta regra garante que a segunda seção de links ("Suporte")
-     seja exibida no celular, em vez de ficar escondida.
-    */
-    .footer-section:nth-child(2) {
-        display: block;
-    }
-
-    /*
-     Esta regra garante que os ícones das redes sociais
-     não fiquem centralizados, alinhando-se com o resto
-     do texto para um visual mais limpo.
-    */
     .footer-section .social-links {
-        justify-content: flex-start;
+        justify-content: flex-start; /* Alinha os ícones à esquerda */
     }
 }
