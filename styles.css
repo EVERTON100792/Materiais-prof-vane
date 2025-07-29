@@ -1094,3 +1094,121 @@ body.dark-mode .theme-toggle-btn .fa-moon { display: none; }
         background: linear-gradient(135deg, #2c3e50 0%, #1a1a1a 100%);
     }
 }
+/* ============================================= */
+/* CORREÇÕES E AJUSTES PARA O RODAPÉ               */
+/* ============================================= */
+
+/* Altera a cor de fundo do rodapé para combinar com a sua imagem */
+.footer {
+    background: #f1f1f1; /* Cor de fundo cinza claro, como na imagem */
+    color: #5E6E80;     /* Cor de texto padrão para o rodapé */
+    padding: 4rem 0 2rem;
+}
+
+/* Define o espaçamento e o alinhamento de cada coluna do rodapé */
+.footer-section {
+    padding-right: 2rem; /* Adiciona um espaçamento para não colar o texto */
+}
+
+/* Estiliza o logo no rodapé */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.footer-logo img {
+    width: 40px;
+    height: 40px;
+}
+body.dark-mode .footer-logo {
+    color: var(--text-dark);
+}
+
+
+.footer-description {
+    margin-bottom: 1.5rem;
+}
+
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+body.dark-mode .footer-title {
+    color: var(--text-dark);
+}
+
+/* CORREÇÃO DE COR: Deixa os links do rodapé visíveis no fundo claro */
+.footer-links a {
+    color: #5E6E80; /* Cor cinza escuro para os links */
+}
+.footer-links a:hover {
+    color: var(--primary-color); /* Mantém a cor de destaque ao passar o mouse */
+}
+/* No modo escuro, os links voltam a ser claros */
+body.dark-mode .footer-links a {
+    color: #ccc;
+}
+
+
+/* CORREÇÃO DE COR: Deixa os ícones sociais visíveis no fundo claro */
+.social-link {
+    background: #e0e0e0; /* Fundo cinza claro para o círculo */
+    color: #2c3e50;      /* Ícone escuro */
+}
+.social-link:hover {
+    background: var(--primary-color);
+    color: #fff; /* Ícone branco ao passar o mouse */
+    transform: translateY(-4px) rotate(0deg); /* Remove a rotação se preferir algo mais sóbrio */
+}
+/* No modo escuro, os ícones voltam ao estilo original */
+body.dark-mode .social-link {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+
+/* Estiliza a parte de baixo do rodapé (créditos e copyright) */
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid #ddd; /* Borda cinza clara */
+}
+body.dark-mode .footer-bottom {
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.developer-credit, .copyright {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin: 0.25rem 0;
+}
+.developer-credit a {
+    color: var(--primary-color); /* Cor de destaque para o link do desenvolvedor */
+    font-weight: 500;
+    text-decoration: none;
+}
+.developer-credit a:hover {
+    text-decoration: underline;
+}
+
+/* AJUSTE RESPONSIVO: Garante que no celular as colunas fiquem bem alinhadas */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        text-align: center; /* Centraliza o conteúdo das colunas no mobile */
+    }
+    .footer-section {
+        padding-right: 0; /* Remove o espaçamento extra no mobile */
+        margin-bottom: 2rem;
+    }
+    .footer-logo, .social-links {
+        justify-content: center; /* Centraliza o logo e os ícones */
+    }
+}
