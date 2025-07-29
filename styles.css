@@ -450,6 +450,16 @@ section {
     gap: 2rem;
 }
 
+/* --- INÍCIO DA CORREÇÃO --- */
+/* Esta regra se aplica APENAS à grade de produtos da seção de materiais gratuitos. */
+#materiais-gratuitos .products-grid {
+    /* Define a grade para ter uma única coluna com a largura base dos seus cards. */
+    grid-template-columns: 350px;
+    /* Centraliza essa coluna no contêiner, alinhando o card. */
+    justify-content: center;
+}
+/* --- FIM DA CORREÇÃO --- */
+
 .product-card {
     background: white;
     border-radius: 20px;
@@ -1423,6 +1433,12 @@ section {
 
     .products-grid {
         grid-template-columns: 1fr;
+    }
+    
+    /* Re-aplica a correção para a seção gratuita no mobile, caso a regra acima interfira */
+    #materiais-gratuitos .products-grid {
+        grid-template-columns: 1fr;
+        justify-content: initial; /* Reseta o justify-content para o padrão */
     }
 
     .about-content {
