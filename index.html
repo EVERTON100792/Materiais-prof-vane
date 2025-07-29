@@ -598,43 +598,64 @@
     <script src="script.js"></script>
     
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const themeToggle = document.getElementById('theme-toggle');
-            const body = document.body;
+    document.addEventListener('DOMContentLoaded', () => {
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
 
-            // Função para ativar o modo escuro
-            const enableDarkMode = () => {
-                body.classList.add('dark-mode');
-                localStorage.setItem('theme', 'dark');
-            };
+        // Função para ativar o modo escuro
+        const enableDarkMode = () => {
+            body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+        };
 
-            // Função para desativar o modo escuro
-            const disableDarkMode = () => {
-                body.classList.remove('dark-mode');
-                localStorage.setItem('theme', 'light');
-            };
+        // Função para desativar o modo escuro
+        const disableDarkMode = () => {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light');
+        };
 
-            // Evento de clique no botão
-            themeToggle.addEventListener('click', () => {
-                // Verifica o estado atual pelo localStorage para decidir a ação
-                if (localStorage.getItem('theme') === 'dark') {
-                    disableDarkMode();
-                } else {
-                    enableDarkMode();
-                }
-            });
-
-            // Verifica a preferência do usuário ao carregar a página
-            const savedTheme = localStorage.getItem('theme');
-            const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-            // Aplica o tema salvo ou o do sistema
-            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-                enableDarkMode();
+        // Evento de clique no botão
+        themeToggle.addEventListener('click', () => {
+            if (localStorage.getItem('theme') === 'dark') {
+                disableDarkMode();
             } else {
-                disableDarkMode(); // Garante que o estado inicial seja o claro se não houver preferência
+                enableDarkMode();
             }
         });
-    </script>
+
+        // Verifica a preferência do usuário ao carregar a página
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+            enableDarkMode();
+        } else {
+            disableDarkMode();
+        }
+    });
+
+    /*
+    ================================================
+    NOVA FUNÇÃO PARA FORÇAR O DOWNLOAD DE ARQUIVOS
+    ================================================
+    Esta função usa JavaScript para buscar o arquivo e
+    forçar o navegador a iniciar o download imediatamente.
+    */
+    function forceDownload(url, fileName) {
+        fetch(url)
+            .then(response => response.blob())
+            .then(blob => {
+                const blobUrl = window.URL.createObjectURL(new Blob([blob]));
+                const link = document.createElement('a');
+                link.href = blobUrl;
+                link.setAttribute('download', fileName);
+                document.body.appendChild(link);
+                link.click();
+                link.parentNode.removeChild(link);
+                window.URL.revokeObjectURL(blobUrl);
+            })
+            .catch(e => console.error('O download falhou.', e));
+    }
+</script>
 </body>
 </html>
